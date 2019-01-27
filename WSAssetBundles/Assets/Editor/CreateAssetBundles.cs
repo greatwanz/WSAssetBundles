@@ -43,5 +43,17 @@ public class CreateAssetBundles
         File.Delete(assetBundleDirectory + "CardText.manifest");
         File.Delete(assetBundleDirectory + "CardText.manifest.meta");
         File.Delete(assetBundleDirectory + "CardText.meta");
+        CardsCount();
+    }
+
+
+    static void CardsCount()
+    {
+        int count = 0;
+        foreach (string s in Directory.GetFiles(Application.dataPath + "/Editor/Cards","*.json", SearchOption.AllDirectories))
+        {
+            count++;
+        }
+        Debug.LogFormat("Cards Count: {0}", count);
     }
 }
