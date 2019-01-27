@@ -14,6 +14,7 @@ public class CreateAssetBundles
         {
             Directory.CreateDirectory(assetBundleDirectory);
         }
+
         AssetBundleManifest assetMf = BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.ChunkBasedCompression, BuildTarget.StandaloneWindows);
 
         //CRC
